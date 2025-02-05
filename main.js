@@ -26,7 +26,7 @@ const token1 = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEwMSwidXNlck5
 try {
     const tokenVerif = jwt.verify(token1, key);
     //console.log(`Token Verificado: ${ tokenVerif }`);
-    console.log('Token Verificado:', tokenVerif);
+    console.log('Token Verificado:', tokenVerif.userID);
 
 } catch (error) {
     console.error('TOKEN INVALIDO: ', error.message);

@@ -24,11 +24,16 @@ console.log(`Token generado: ${token}`);
 const token1 = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEwMSwidXNlck5hbWUiOiJKdWFuIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzM4NzIwNDc4LCJleHAiOjE3Mzg3MjQwNzh9.9a_UEWXIBhrySdH2-34BQi9iqvMdEaPQOFhMv4-qpO4';
 
 try {
-    const tokenVerif = jwt.verify(token1, key);
-    //console.log(`Token Verificado: ${ tokenVerif }`);
-    console.log('Token Verificado:', tokenVerif.userID);
+    const tokenVerif = jwt.verify(token, key);
+    //console.log(`Token Verificado: ${JSON.stringify(tokenVerif)}`);
+    console.log('Token Verificado:', tokenVerif);
 
 } catch (error) {
     console.error('TOKEN INVALIDO: ', error.message);
 }
+
+// Decodificacion del Token
+console.log('**************');
+const decodedPayload = jwt.decode(token);
+console.log(decodedPayload);
 
